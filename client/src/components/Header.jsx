@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <div className='relative min-h-[80vh] bg-gradient-to-br from-white via-blue-50 to-purple-50'>
-      <div className='absolute inset-0 bg-[url("/src/assets/gradient.png")] bg-cover bg-center opacity-20 mix-blend-multiply -z-10'></div>
+      <div className='absolute inset-0 bg-[url("/src/assets/gradientBackground.png")] bg-cover bg-center opacity-20 mix-blend-multiply -z-10'></div>
       
       <div className='mx-8 sm:mx-16 xl:mx-24 relative z-10'>
         <div className='text-center pt-20 pb-8'>
