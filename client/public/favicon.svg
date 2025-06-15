@@ -1,0 +1,38 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="faviconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#5d4e75;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="faviconLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Elegant rounded background -->
+  <rect x="2" y="2" width="28" height="28" rx="9" ry="9" fill="url(#faviconGradient)"/>
+  
+  <!-- Central lightbulb -->
+  <g transform="translate(16,14)">
+    <!-- Bulb body -->
+    <ellipse cx="0" cy="0" rx="4" ry="6" fill="url(#faviconLight)" opacity="0.95"/>
+    <!-- Base -->
+    <rect x="-2.5" y="4.5" width="5" height="2" rx="1" fill="url(#faviconLight)" opacity="0.9"/>
+    <!-- Filament -->
+    <path d="M-2 -2 Q0 -4 2 -2" stroke="#8b5cf6" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.8"/>
+  </g>
+  
+  <!-- Community nodes -->
+  <circle cx="9" cy="9" r="1.5" fill="url(#faviconLight)" opacity="0.8"/>
+  <circle cx="23" cy="9" r="1.5" fill="url(#faviconLight)" opacity="0.8"/>
+  <circle cx="9" cy="23" r="1.5" fill="url(#faviconLight)" opacity="0.8"/>
+  <circle cx="23" cy="23" r="1.5" fill="url(#faviconLight)" opacity="0.8"/>
+  
+  <!-- Refined connection lines -->
+  <path d="M9 9 Q12 11 16 14" stroke="#c084fc" stroke-width="1" fill="none" opacity="0.6"/>
+  <path d="M23 9 Q20 11 16 14" stroke="#c084fc" stroke-width="1" fill="none" opacity="0.6"/>
+  <path d="M9 23 Q12 21 16 18" stroke="#c084fc" stroke-width="1" fill="none" opacity="0.6"/>
+  <path d="M23 23 Q20 21 16 18" stroke="#c084fc" stroke-width="1" fill="none" opacity="0.6"/>
+</svg>

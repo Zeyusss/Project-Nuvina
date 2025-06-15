@@ -1,0 +1,93 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="elegantGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#34495e;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#5d4e75;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="lightGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c084fc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="elegantGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="rgba(44,62,80,0.25)"/>
+    </filter>
+  </defs>
+  
+  <!-- Main circular background with sophisticated gradient -->
+  <circle cx="100" cy="100" r="88" fill="url(#elegantGradient)" filter="url(#softShadow)"/>
+  
+  <!-- Inner subtle ring -->
+  <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(248,250,252,0.1)" stroke-width="1"/>
+  
+  <!-- Central lightbulb - the source of enlightenment -->
+  <g transform="translate(100,85)">
+    <!-- Bulb body with elegant shading -->
+    <ellipse cx="0" cy="0" rx="16" ry="22" fill="url(#lightGradient)" opacity="0.95" filter="url(#elegantGlow)"/>
+    <!-- Refined base -->
+    <rect x="-10" y="18" width="20" height="6" rx="3" fill="url(#lightGradient)" opacity="0.9"/>
+    <!-- Elegant filament pattern -->
+    <path d="M-6 -8 Q0 -18 6 -8 M-6 -2 Q0 -12 6 -2 M-6 4 Q0 -6 6 4" stroke="url(#accentGradient)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.8"/>
+    <!-- Sophisticated light rays -->
+    <g opacity="0.6">
+      <path d="M-22 -12 L-28 -18 M-22 -6 L-30 -6 M-22 0 L-28 6" stroke="url(#lightGradient)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M22 -12 L28 -18 M22 -6 L30 -6 M22 0 L28 6" stroke="url(#lightGradient)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M-6 -26 L-6 -32 M0 -26 L0 -34 M6 -26 L6 -32" stroke="url(#lightGradient)" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+  
+  <!-- Community nodes - thoughtfully positioned -->
+  <circle cx="65" cy="55" r="7" fill="url(#lightGradient)" opacity="0.9" filter="url(#elegantGlow)"/>
+  <circle cx="135" cy="55" r="7" fill="url(#lightGradient)" opacity="0.9" filter="url(#elegantGlow)"/>
+  <circle cx="55" cy="125" r="7" fill="url(#lightGradient)" opacity="0.9" filter="url(#elegantGlow)"/>
+  <circle cx="145" cy="125" r="7" fill="url(#lightGradient)" opacity="0.9" filter="url(#elegantGlow)"/>
+  <circle cx="45" cy="90" r="5" fill="url(#lightGradient)" opacity="0.8"/>
+  <circle cx="155" cy="90" r="5" fill="url(#lightGradient)" opacity="0.8"/>
+  <circle cx="100" cy="45" r="5" fill="url(#lightGradient)" opacity="0.8"/>
+  <circle cx="100" cy="155" r="5" fill="url(#lightGradient)" opacity="0.8"/>
+  
+  <!-- Elegant connection pathways -->
+  <path d="M65 55 Q82 68 100 80" stroke="url(#accentGradient)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <path d="M135 55 Q118 68 100 80" stroke="url(#accentGradient)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <path d="M55 125 Q77 108 100 95" stroke="url(#accentGradient)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <path d="M145 125 Q123 108 100 95" stroke="url(#accentGradient)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <path d="M45 90 Q72 88 85 85" stroke="url(#accentGradient)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+  <path d="M155 90 Q128 88 115 85" stroke="url(#accentGradient)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+  
+  <!-- Flowing wisdom particles -->
+  <circle cx="78" cy="72" r="2" fill="url(#accentGradient)" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;0.2;0.7" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="122" cy="72" r="2" fill="url(#accentGradient)" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="88" cy="118" r="2" fill="url(#accentGradient)" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.3;0.6" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="112" cy="118" r="2" fill="url(#accentGradient)" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.7;0.4" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Outer ring of infinite potential -->
+  <circle cx="100" cy="100" r="82" fill="none" stroke="rgba(248,250,252,0.2)" stroke-width="1" stroke-dasharray="8,4" opacity="0.8">
+    <animateTransform attributeName="transform" type="rotate" values="0 100 100;360 100 100" dur="30s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Inner constellation effect -->
+  <circle cx="70" cy="100" r="1" fill="url(#lightGradient)" opacity="0.6"/>
+  <circle cx="130" cy="100" r="1" fill="url(#lightGradient)" opacity="0.6"/>
+  <circle cx="100" cy="70" r="1" fill="url(#lightGradient)" opacity="0.6"/>
+  <circle cx="100" cy="130" r="1" fill="url(#lightGradient)" opacity="0.6"/>
+</svg>
