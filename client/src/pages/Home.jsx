@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import Navbar from '../components/Navbar'
 import Header from '../components/Header'
-import Bloglist from '../components/Bloglist'
+import BlogList from '../components/BlogList'
 import NewsLetter from '../components/NewsLetter'
 import Footer from '../components/Footer'
 
@@ -10,7 +10,7 @@ const Home = () => {
     <>
 <Navbar/>
 <Header/>
-<Bloglist/>
+<BlogList/>
 <NewsLetter/>
 <Footer/>
     </>
