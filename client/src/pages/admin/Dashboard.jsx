@@ -80,6 +80,7 @@ const Dashboard = () => {
                             <tr>
                                 <th scope='col' className='px-2 py-4 xl:px-6'> # </th>
                                 <th scope='col' className='px-2 py-4'> Blog Title </th>
+                                <th scope='col' className='px-2 py-4'> Publisher </th>
                                 <th scope='col' className='px-2 py-4 max-sm:hidden'> Date </th>
                                 <th scope='col' className='px-2 py-4 max-sm:hidden'> Status </th>
                                 <th scope='col' className='px-2 py-4'> Comments </th>

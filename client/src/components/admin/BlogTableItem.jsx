@@ -76,6 +76,9 @@ const BlogTableItem = ({blog, fetchBlogs, index}) => {
                     <p className='text-gray-800 font-medium'>{blog.title}</p>
                 </div>
             </td>
+            <td className='px-2 py-4'>
+            {blog.author && blog.author.name ? blog.author.name : '-'}
+            </td>
             <td className='px-2 py-4 max-sm:hidden'>{BlogDate.toLocaleDateString()}</td>
             <td className='px-2 py-4 max-sm:hidden'>
                 <span className={`px-2 py-1 rounded-full text-xs ${
@@ -85,7 +88,7 @@ const BlogTableItem = ({blog, fetchBlogs, index}) => {
                 </span>
             </td>
             <td className='px-2 py-4'>
-                <div className='flex items-center gap-1'>
+                <div className='flex items-center justify-center gap-1'>
                     <CommentIcon className='text-gray-500' fontSize='small' />
                     <span>{commentCount || 0}</span>
                 </div>

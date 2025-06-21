@@ -57,6 +57,7 @@ try {
     const totalBlogs = await Blog.countDocuments({isPublished: true});
     const blogs = await Blog.find({isPublished: true})
         .populate('author', 'name email')
+        .populate('likes', 'name')
         .sort({createdAt: -1})
         .skip(skip)
         .limit(limit);
@@ -87,7 +88,8 @@ export const getBlogById = async (req,res)=>{
 try {
     const {blogId} = req.params;
     const blog = await Blog.findById(blogId)
-        .populate('author', 'name email'); 
+        .populate('author', 'name email')
+        .populate('likes', 'name');
     if(!blog){
         return res.json({state:false, message: "Blog Not Found"})
     }
@@ -205,3 +207,40 @@ export const updateBlog = async (req, res) => {
         res.json({ state: false, message: error.message });
     }
 }
+
+// like/unlike a blog post
+export const toggleLike = async (req, res) => {
+  try {
+    const { blogId } = req.params;
+    const userId = req.user.id;
+    const blog = await Blog.findById(blogId);
+    if (!blog) {
+      return res.json({ state: false, message: 'Blog not found' });
+    }
+    const index = blog.likes.findIndex((id) => id.toString() === userId);
+    if (index === -1) {
+      blog.likes.push(userId);
+    } else {
+      blog.likes.splice(index, 1);
+    }
+    await blog.save();
+    const updatedBlog = await Blog.findById(blogId).populate('likes', 'name');
+    res.json({ state: true, likes: updatedBlog.likes });
+  } catch (error) {
+    res.json({ state: false, message: error.message });
+  }
+};
+
+// Get likes for a blog post
+export const getBlogLikes = async (req, res) => {
+  try {
+    const { blogId } = req.params;
+    const blog = await Blog.findById(blogId).populate('likes', 'name');
+    if (!blog) {
+      return res.json({ state: false, message: 'Blog not found' });
+    }
+    res.json({ state: true, likes: blog.likes });
+  } catch (error) {
+    res.json({ state: false, message: error.message });
+  }
+};

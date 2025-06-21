@@ -30,6 +30,7 @@ A full-stack blog management system with user authentication, role-based access 
 - Comment system
 - Newsletter subscription
 - Responsive design for all devices
+- **Likes system: users can like/unlike blogs, see who liked, and view all likers' names**
 
 ### AI Integration
 - AI-powered content generation
@@ -42,6 +43,14 @@ A full-stack blog management system with user authentication, role-based access 
 - Image optimization
 - Responsive design
 - Clean and modern UI
+
+### Admin Features
+- Publisher name display in admin dashboard and blog list
+
+### UI/UX Improvements
+- Enhanced blog detail page layout and readability
+- Section headings, dividers, and improved spacing
+- Animated like button and improved comments/add comment form
 
 ## 🚀 Tech Stack
 
@@ -188,4 +197,20 @@ A full-stack blog management system with user authentication, role-based access 
 
 ## 📄 License
 
-This project is licensed under the MIT License. 
+This project is licensed under the MIT License.
+
+
+## 🆕 Recent Updates (2024-06-21)
+- Added full likes system (backend & frontend)
+- Publisher name now shown in admin dashboard and blog list
+- Blog detail page UI/UX significantly improved: section headings, spacing, animated like button, improved comments, and add comment form 
+
+## 🛠️ Usage: Likes Feature
+- Only logged-in users can like or unlike a blog post.
+- The like button and a list of all users who liked the article appear at the end of each blog post.
+- The number of likes and all likers' names are always visible, along with a phrase (e.g., "likes this article").
+
+## 📖 API Endpoints (Likes System)
+
+- `POST /api/blog/:blogId/like` — Toggle like/unlike for a blog post (requires authentication)
+- `GET /api/blog/:blogId/likes` — Get all users who liked a blog post

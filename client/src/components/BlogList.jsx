@@ -47,7 +47,7 @@ const BlogList = () => {
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 mb-24 mx-8 ms:mx-16 xl:mx-40">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 mb-24 mx-4 sm:mx-12 xl:mx-56 2xl:mx-80">
         {filteredBlogs()
           .filter((blog) => (menu === "All" ? true : blog.category === menu))
           .map((blog) => (
@@ -55,6 +55,7 @@ const BlogList = () => {
               key={blog._id}
               to={`/blog/${blog._id}`}
               className="group relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+              style={{ minHeight: '370px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
             >
               <div className="aspect-w-16 aspect-h-9">
                 <img
@@ -63,30 +64,37 @@ const BlogList = () => {
                   className="w-full h-48 object-cover"
                 />
               </div>
-              <div className="p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary">
-                    {blog.category}
-                  </span>
-                  <span className="text-sm text-gray-500">
-                    {Moment(blog.createdAt).format('MMM Do YYYY')}
-                  </span>
+              <div className="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary">
+                      {blog.category}
+                    </span>
+                    <span className="text-sm text-gray-500">
+                      {Moment(blog.createdAt).format('MMM Do YYYY')}
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 group-hover:text-primary line-clamp-2">
+                    {blog.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-gray-500 line-clamp-3">
+                    {blog.description.replace(/<[^>]*>/g, '')}
+                  </p>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-primary">
-                  {blog.title}
-                </h3>
-                <p className="mt-2 text-sm text-gray-500 line-clamp-2">
-                  {blog.description.replace(/<[^>]*>/g, '')}
-                </p>
                 <div className="mt-2 flex items-center justify-between">
                   {blog.author && (
-                    <div className="text-sm text-gray-600">
-                      By {blog.author.name}
+                    <div className="text-sm font-bold text-gray-400 bg-white/90 py-1  border-gray-200" style={{letterSpacing: '0.01em'}}>
+                      By <span className='ml-1'>{blog.author.name}</span>
                     </div>
                   )}
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                    {blog.commentCount || 0} comments
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                      {blog.likes?.length || 0} likes
+                    </span>
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                      {blog.commentCount || 0} comments
+                    </span>
+                  </div>
                 </div>
               </div>
             </Link>

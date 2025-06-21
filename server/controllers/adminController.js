@@ -52,7 +52,7 @@ export const getDashboard = async (req, res) => {
         const recentBlogs = await Blog.find(role === 'admin' ? {} : { author: id })
             .sort({ createdAt: -1 })
             .limit(5)
-            .populate('author', 'email');
+            .populate('author', 'name email');
 
         const blogsWithComments = await Promise.all(recentBlogs.map(async (blog) => {
             const commentCount = await Comment.countDocuments({ 
@@ -85,7 +85,7 @@ export const getAllBlogsAdmin = async (req, res) => {
         const { role, id } = req.user;
         const blogs = await Blog.find(role === 'admin' ? {} : { author: id })
             .sort({ createdAt: -1 })
-            .populate('author', 'email');
+            .populate('author', 'name email');
 
         const blogsWithComments = await Promise.all(blogs.map(async (blog) => {
             const commentCount = await Comment.countDocuments({ blog: blog._id });

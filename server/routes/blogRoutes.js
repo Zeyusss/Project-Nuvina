@@ -1,5 +1,5 @@
 import express from 'express'
-import { addBlog, addComment, deleteBlogById, generateContent, getAllBlogs, getBlogById, getBlogComments, togglePublish, updateBlog } from '../controllers/blogController.js';
+import { addBlog, addComment, deleteBlogById, generateContent, getAllBlogs, getBlogById, getBlogComments, togglePublish, updateBlog, toggleLike, getBlogLikes } from '../controllers/blogController.js';
 import upload from '../middleware/multer.js';
 import auth from '../middleware/auth.js';
 
@@ -14,6 +14,7 @@ blogRouter.post("/delete",auth,deleteBlogById);
 blogRouter.post("/toggle-publish",auth,togglePublish);
 blogRouter.post("/add-comment",addComment);
 blogRouter.post("/generate",auth,generateContent);
-
+blogRouter.post('/:blogId/like', auth, toggleLike);
+blogRouter.get('/:blogId/likes', getBlogLikes);
 
 export default blogRouter;
